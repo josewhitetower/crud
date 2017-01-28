@@ -8,6 +8,9 @@
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <title>CRUD</title>
 </head>
 <body>
@@ -15,24 +18,29 @@
     <div class="row">
       <h3>CRUD PHP MySQL Bootstrap</h3>
       <div class="row">
+          <p><a href="create.php" class="btn btn-success">Create</a></p>
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
               <th>Name</th>
               <th>Email Address</th>
               <th>Mobile</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <?php
               include 'database.php';
               $pdo=Database::connect();
-              $sql='select * from costumer order by id desc';
-              foreach ($$pdp->query($sql) as $row) {
+              $sql='select * from customers order by id desc';
+              foreach ($pdo->query($sql) as $row) {
                 echo '<tr>';
                 echo '<td>'.$row['name'] . '</td>';
                 echo '<td>'.$row['email'] . '</td>';
                 echo '<td>'.$row['mobile'] . '</td>';
+                echo '<td><a class="btn" href="read.php?id='.$row['id'].'">Read</a></td>';
+                echo '</tr>';
+
                 # code...
               }
               Database::disconnect();
@@ -43,7 +51,5 @@
     </div>
   </div>
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

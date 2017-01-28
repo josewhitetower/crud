@@ -7,9 +7,9 @@ class Database
   private static $dbname= 'crud';
   private static $host='localhost';
   private static $user='root';
-  private static §password= 'root';
+  private static $password= 'root';
 
-  private static cxn= null;
+  private static $cxn= null;
 
 
   function __construct()
@@ -25,10 +25,10 @@ class Database
         self::$cxn= new PDO ("mysql:host=".self::$host.";"."dbname=".self::$dbname, self::$user, self::$password);
 
       } catch (Exception $e) {
-        die(e->getMessage());
+        die($e->getMessage());
       }
     }
-    return self:$cxn;
+    return self::$cxn;
    }
 
    public static function disconnect(){
