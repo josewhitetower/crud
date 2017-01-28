@@ -3,6 +3,11 @@
 <html lang="en">
 <?php require 'header.php'; ?>
 <body>
+<style type="text/css">
+  .btn{
+    margin: 5px;
+  }
+</style>
   <div class="container">
     <div class="row">
       <h3>CRUD PHP MySQL Bootstrap</h3>
@@ -27,7 +32,9 @@
                 echo '<td>'.$row['name'] . '</td>';
                 echo '<td>'.$row['email'] . '</td>';
                 echo '<td>'.$row['mobile'] . '</td>';
-                echo '<td><a class="btn btn-info" href="read.php?id='.$row['id'].'">Read</a></td>';
+                echo '<td width=250><a class="btn btn-info" href="read.php?id='.$row['id'].'">Read</a>';
+                echo '<a class="btn btn-warning" href="update.php?id='.$row['id'].'">Update</a>';
+                echo '<a class="btn btn-danger" href="delete.php?id='.$row['id'].'">Delete</a></td>';
                 echo '</tr>';
 
                 # code...

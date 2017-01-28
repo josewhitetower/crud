@@ -65,7 +65,7 @@
                         </div>
                       </div>
                         <div class="form-actions">
-                          <a class="btn btn-success" href="index.php">Back</a>
+                          <a class="btn btn-primary" href="index.php">Back</a>
                        </div>
 
 
