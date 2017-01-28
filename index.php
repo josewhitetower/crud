@@ -50,6 +50,8 @@
       </div>
     </div>
   </div>
-
+<?php
+echo "<footer><p class= text-center>" . date("Y") . " jose-torreblanca.com</p></footer>";
+?>
 </body>
 </html>
