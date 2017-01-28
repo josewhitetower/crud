@@ -1,9 +1,10 @@
 
+<?php ini_set("display_errors", 1); error_reporting(E_ALL); ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php require 'header.php'; ?>
 <body>
-<?php ini_set("display_errors", 1); error_reporting(E_ALL); ?>
+
 <?php
 require "database.php";
 if ( !empty($_POST)) {
@@ -35,6 +36,10 @@ if ( !empty($_POST)) {
         if (empty($mobile)) {
             $mobileError = 'Please enter Mobile Number';
             $valid = false;
+        }elseif (!is_numeric($mobile)) {
+          # code...
+          $mobileError='Please enter a valid telephone number';
+          $valid=false;
         }
 
         // insert data
@@ -79,7 +84,7 @@ if ( !empty($_POST)) {
                       </div>
                       <div class="control-group form-group <?php echo !empty($mobileError)?'error':'';?>">
                         <div class="controls">
-                            <input class="form-control" name="mobile" type="text"  placeholder="Mobile Number" value="<?php echo !empty($mobile)?$mobile:'';?>">
+                            <input class="form-control" name="mobile" type="text"  placeholder="Mobile Number (only numbers, no special characters)" value="<?php echo !empty($mobile)?$mobile:'';?>">
                             <?php if (!empty($mobileError)): ?>
                                 <span class="help-inline"><?php echo $mobileError;?></span>
                             <?php endif;?>
