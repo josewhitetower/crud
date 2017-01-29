@@ -38,7 +38,7 @@ if ( !empty($_POST)) {
             $valid = false;
         }elseif (!is_numeric($mobile)) {
           # code...
-          $mobileError='Please enter a valid telephone number';
+          $mobileError='Please enter a valid Mobile Number';
           $valid=false;
         }
 

@@ -41,6 +41,9 @@
         if (empty($mobile)) {
             $mobileError = 'Please enter Mobile Number';
             $valid = false;
+        }elseif (!is_numeric($mobile)) {
+            $mobileError = 'Please enter a valid Mobile Number';
+            $valid = false;
         }
 
         // update data
@@ -96,7 +99,7 @@
                       </div>
                       <div class="form-group control-group <?php echo !empty($mobileError)?'error':'';?>">
                          <div class="controls">
-                            <input class="form-control" name="mobile" type="text"  placeholder="Mobile Number" value="<?php echo !empty($mobile)?$mobile:'';?>">
+                            <input class="form-control" name="mobile" type="text"  placeholder="Mobile Number, only numbers allowed" value="<?php echo !empty($mobile)?$mobile:'';?>">
                             <?php if (!empty($mobileError)): ?>
                                 <span class="text-danger"><?php echo $mobileError;?></span>
                             <?php endif;?>
