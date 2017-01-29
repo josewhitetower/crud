@@ -39,7 +39,7 @@
                       <p class="alert alert-danger">Are you sure to delete ?</p>
                       <div class="form-actions">
                           <button type="submit" class="btn btn-danger">Yes</button>
-                          <a class="btn" href="index.php">No</a>
+                          <a class="btn btn-default" href="index.php">No</a>
                         </div>
                     </form>
                 </div>
