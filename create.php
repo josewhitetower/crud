@@ -70,7 +70,7 @@ if ( !empty($_POST)) {
                         <div class="controls">
                             <input class="form-control" name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
                             <?php if (!empty($nameError)): ?>
-                                <span class="help-inline"><?php echo $nameError;?></span>
+                                <span class="text-danger"><?php echo $nameError;?></span>
                             <?php endif; ?>
                         </div>
                       </div>
@@ -78,7 +78,7 @@ if ( !empty($_POST)) {
                         <div class="controls">
                             <input class="form-control" name="email" type="text" placeholder="Email Address" value="<?php echo !empty($email)?$email:'';?>">
                             <?php if (!empty($emailError)): ?>
-                                <span class="help-inline"><?php echo $emailError;?></span>
+                                <span class="text-danger"><?php echo $emailError;?></span>
                             <?php endif;?>
                         </div>
                       </div>
@@ -86,7 +86,7 @@ if ( !empty($_POST)) {
                         <div class="controls">
                             <input class="form-control" name="mobile" type="text"  placeholder="Mobile Number (only numbers, no special characters)" value="<?php echo !empty($mobile)?$mobile:'';?>">
                             <?php if (!empty($mobileError)): ?>
-                                <span class="help-inline"><?php echo $mobileError;?></span>
+                                <span class="text-danger"><?php echo $mobileError;?></span>
                             <?php endif;?>
                         </div>
                       </div>
