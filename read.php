@@ -65,6 +65,7 @@
                         </div>
                       </div>
                         <div class="form-actions">
+                          <?php  echo '<a class="btn btn-warning" href="update.php?id='.$data['id'].'">Update</a>'; ?>
                           <a class="btn btn-primary" href="index.php">Back</a>
                        </div>
 
